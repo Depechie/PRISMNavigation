@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<views:BasePage xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:BasePageDemo.NetStandard.Views;assembly=BasePageDemo.NetStandard"
+    x:Class="BasePageDemo.NetStandard.Views.SecondPage"
+    BasePageTitle="{Binding Title}">
+    <views:BasePage.BasePageContent>
+        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+            <Label Text="Look ma the second page" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+
+            <Button Text="Navigate back"
+                Command="{Binding NavigateCommand}"
+                VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+
+            <Button Text="Menu" Clicked="OnMenuClicked"
+                VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+
+            <Button Text="Navigate to sub page"
+                Command="{Binding NavigateSubCommand}"
+                VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+
+        </StackLayout>
+    </views:BasePage.BasePageContent>
+</views:BasePage>

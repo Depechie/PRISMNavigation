@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    x:Class="BasePageDemo.NetStandard.Views.MDPage">
+	<MasterDetailPage.Master>
+        <NavigationPage Title="Required Foo" Icon="hamburger.png">
+            <x:Arguments>
+                <ContentPage Title="Menu">
+                    <StackLayout Padding="40">
+                        <Button Text="View A" Command="{Binding NavigateVACommand}" />
+                        <Button Text="View B" Command="{Binding NavigateVBCommand}" />
+                    </StackLayout>
+                </ContentPage>
+            </x:Arguments>
+        </NavigationPage>        
+	</MasterDetailPage.Master>
+</MasterDetailPage>
