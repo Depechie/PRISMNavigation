@@ -4,7 +4,7 @@ This project will show some common navigation flows together with PRISM for Xama
 Current flows available:
 
 * Master / detail screen
-  * Switch detail parts through item selecting in the master menu
+  * Switch detail parts through item selection from the master menu
   * Navigate to a sub page from the detail part
 
 * Modal screen
