@@ -2,16 +2,20 @@
 <views:BasePage xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:views="clr-namespace:BasePageDemo.NetStandard.Views;assembly=BasePageDemo.NetStandard"
-    x:Class="BasePageDemo.NetStandard.Views.SubPage"
+    x:Class="BasePageDemo.NetStandard.Views.SubModalPage"
     BasePageTitle="{Binding Title}">
-    <views:BasePage.BasePageContent>
+	<views:BasePage.BasePageContent>
         <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
-            <Label Text="Look ma the sub page" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+            <Label Text="Look ma the modal sub page" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+
+            <Button Text="Navigate to sub page within modal"
+                Command="{Binding NavigateSubCommand}"
+                VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
 
             <Button Text="Navigate back"
                 Command="{Binding NavigateCommand}"
                 VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
 
-        </StackLayout>
-    </views:BasePage.BasePageContent>
+        </StackLayout>        
+	</views:BasePage.BasePageContent>
 </views:BasePage>

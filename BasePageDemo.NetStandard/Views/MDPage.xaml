@@ -5,12 +5,12 @@
     prism:ViewModelLocator.AutowireViewModel="True"
     x:Class="BasePageDemo.NetStandard.Views.MDPage">
 	<MasterDetailPage.Master>
-        <NavigationPage Title="Required Foo" Icon="hamburger.png">
+        <NavigationPage Title="Required Foo">
             <x:Arguments>
                 <ContentPage Title="Menu">
                     <StackLayout Padding="40">
-                        <Button Text="View A" Command="{Binding NavigateVACommand}" />
-                        <Button Text="View B" Command="{Binding NavigateVBCommand}" />
+                        <Button Text="Open view A" Command="{Binding NavigateVACommand}" />
+                        <Button Text="Open view B" Command="{Binding NavigateVBCommand}" />
                     </StackLayout>
                 </ContentPage>
             </x:Arguments>

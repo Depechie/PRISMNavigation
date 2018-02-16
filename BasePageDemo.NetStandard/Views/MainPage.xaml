@@ -6,11 +6,17 @@
     BasePageTitle="{Binding Title}">
 	<views:BasePage.BasePageContent>
         <StackLayout VerticalOptions="CenterAndExpand">
-            <Button Text="Navigate to second page"
+            <Label Text="Look ma view A" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+            
+            <Button Text="Navigate to a sub page"
                 Command="{Binding NavigateCommand}"
                 VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
 
-            <Button Text="Menu" Clicked="OnMenuClicked"
+            <Button Text="Navigate to a modal sub page"
+                Command="{Binding NavigateModalCommand}"
+                VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />            
+
+            <Button Text="Open master detail menu" Clicked="OnMenuClicked"
                 VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
         </StackLayout>
 	</views:BasePage.BasePageContent>

@@ -27,6 +27,7 @@ namespace BasePageDemo
             containerRegistry.RegisterForNavigation<MainPage, MainViewModel>();
             containerRegistry.RegisterForNavigation<SecondPage, SecondViewModel>();
             containerRegistry.RegisterForNavigation<SubPage, SubViewModel>();
+            containerRegistry.RegisterForNavigation<SubModalPage, SubModalViewModel>();
         }
     }
 }

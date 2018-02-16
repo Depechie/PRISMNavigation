@@ -5,10 +5,7 @@ namespace BasePageDemo.NetStandard.ViewModels
 {
     public class SecondViewModel : ViewModelBase
     {
-        public string Title => "Second page";
-
-        private DelegateCommand _navigateCommand;
-        public DelegateCommand NavigateCommand => _navigateCommand ?? (_navigateCommand = new DelegateCommand(async () => await _navigationService.GoBackAsync()));
+        public string Title => "VIEW B";
 
         private DelegateCommand _navigateSubCommand;
         public DelegateCommand NavigateSubCommand => _navigateSubCommand ?? (_navigateSubCommand = new DelegateCommand(async () => await _navigationService.NavigateAsync("SubPage")));
