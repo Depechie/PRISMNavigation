@@ -1,10 +1,13 @@
-﻿using Prism.Commands;
+﻿using BasePageDemo.NetStandard.Services.Interfaces;
+using Prism.Commands;
 using Prism.Navigation;
 
 namespace BasePageDemo.NetStandard.ViewModels
 {
     public class MainViewModel : ViewModelBase
     {
+        private IPopupService _popupService;
+
         public string Title => "VIEW A";
 
         private DelegateCommand _navigateCommand;
@@ -13,8 +16,15 @@ namespace BasePageDemo.NetStandard.ViewModels
         private DelegateCommand _navigateModalCommand;
         public DelegateCommand NavigateModalCommand => _navigateModalCommand ?? (_navigateCommand = new DelegateCommand(async () => await _navigationService.NavigateAsync("NavigationPage/SubModalPage", useModalNavigation: true)));
 
-        public MainViewModel(INavigationService navigationService) : base(navigationService)
+        private DelegateCommand _popupCommand;
+        public DelegateCommand PopupCommand => _popupCommand ?? (_popupCommand = new DelegateCommand(() => _popupService.DisplayPopup("", "", new DelegateCommand<Controls.PopupResultEventArgs>(async (result) =>
         {
+            var t = result;
+        }))));
+
+        public MainViewModel(INavigationService navigationService, IPopupService popupService) : base(navigationService)
+        {
+            _popupService = popupService;
         }
     }
 }

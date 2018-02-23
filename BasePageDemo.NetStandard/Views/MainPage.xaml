@@ -14,7 +14,10 @@
 
             <Button Text="Navigate to a modal sub page"
                 Command="{Binding NavigateModalCommand}"
-                VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />            
+                VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+
+            <Button Text="Open popup"
+                Command="{Binding PopupCommand}" />
 
             <Button Text="Open master detail menu" Clicked="OnMenuClicked"
                 VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />

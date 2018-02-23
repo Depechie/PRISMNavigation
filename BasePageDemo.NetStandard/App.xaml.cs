@@ -1,4 +1,6 @@
-﻿using BasePageDemo.NetStandard.ViewModels;
+﻿using BasePageDemo.NetStandard.Services;
+using BasePageDemo.NetStandard.Services.Interfaces;
+using BasePageDemo.NetStandard.ViewModels;
 using BasePageDemo.NetStandard.Views;
 using Prism;
 using Prism.Ioc;
@@ -28,6 +30,8 @@ namespace BasePageDemo
             containerRegistry.RegisterForNavigation<SecondPage, SecondViewModel>();
             containerRegistry.RegisterForNavigation<SubPage, SubViewModel>();
             containerRegistry.RegisterForNavigation<SubModalPage, SubModalViewModel>();
+
+            containerRegistry.Register<IPopupService, PopupService>();
         }
     }
 }

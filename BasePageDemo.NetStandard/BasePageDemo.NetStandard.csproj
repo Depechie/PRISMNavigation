@@ -19,5 +19,7 @@
     <Folder Include="Views\" />
     <Folder Include="ViewModels\" />
     <Folder Include="Services\" />
+    <Folder Include="Controls\" />
+    <Folder Include="Services\Interfaces\" />
   </ItemGroup>
 </Project>
