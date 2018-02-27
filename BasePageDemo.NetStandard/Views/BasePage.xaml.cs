@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using BasePageDemo.NetStandard.Services.Interfaces;
+using Prism.Unity;
+using Unity;
 using Xamarin.Forms;
 
 namespace BasePageDemo.NetStandard.Views
@@ -23,11 +26,14 @@ namespace BasePageDemo.NetStandard.Views
         #endregion
 
         public IList<View> BasePageContent { get => BaseContent.Children; }
+        public IPopupService PopupService { get; }
 
         public BasePage()
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
+
+            PopupService = ((PrismApplication)App.Current).Container.GetContainer().Resolve<IPopupService>();
 
             //TODO: Glenn - make the status row height depending from the platform ( Android or iOS ) and device ( iOS regular or iPhone X )
             StatusRowDefinition.Height = 20;
@@ -38,6 +44,11 @@ namespace BasePageDemo.NetStandard.Views
             base.OnAppearing();
 
             var t = Navigation.NavigationStack;
+        }
+
+        protected override bool OnBackButtonPressed()
+        {
+            return PopupService.Dismiss();
         }
     }
 }

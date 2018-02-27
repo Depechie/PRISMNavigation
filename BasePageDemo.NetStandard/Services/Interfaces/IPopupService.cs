@@ -7,5 +7,6 @@ namespace BasePageDemo.NetStandard.Services.Interfaces
     public interface IPopupService
     {
         void DisplayPopup(string title, string content, DelegateCommand<PopupResultEventArgs> command = null);
+        bool Dismiss();
     }
 }

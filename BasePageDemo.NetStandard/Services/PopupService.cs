@@ -29,13 +29,32 @@ namespace BasePageDemo.NetStandard.Services
                 ((BasePage)((NavigationPage)current.Detail).CurrentPage).BasePageContent.Add(_popup);
         }
 
+        public bool Dismiss()
+        {            
+            return RemovePopup();
+        }
+
         private void OnClicked(object sender, Controls.PopupResultEventArgs args)
         {
-            if (App.Current.MainPage is MasterDetailPage current)
-                ((BasePage)((NavigationPage)current.Detail).CurrentPage).BasePageContent.Remove(_popup);
+            RemovePopup();
 
             if (_command != null)
                 _command.Execute(args);
+        }
+
+        private bool RemovePopup()
+        {
+            if (_popup != null && App.Current.MainPage is MasterDetailPage current)
+            {
+                ((BasePage)((NavigationPage)current.Detail).CurrentPage).BasePageContent.Remove(_popup);
+
+                _popup.Click -= OnClicked;
+                _popup = null;
+
+                return true;
+            }
+
+            return false;
         }
     }
 }

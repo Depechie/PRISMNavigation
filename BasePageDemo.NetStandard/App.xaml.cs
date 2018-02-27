@@ -5,6 +5,7 @@ using BasePageDemo.NetStandard.Views;
 using Prism;
 using Prism.Ioc;
 using Prism.Unity;
+using Unity;
 using Xamarin.Forms;
 
 namespace BasePageDemo
@@ -31,7 +32,7 @@ namespace BasePageDemo
             containerRegistry.RegisterForNavigation<SubPage, SubViewModel>();
             containerRegistry.RegisterForNavigation<SubModalPage, SubModalViewModel>();
 
-            containerRegistry.Register<IPopupService, PopupService>();
+            containerRegistry.RegisterSingleton<IPopupService, PopupService>();
         }
     }
 }

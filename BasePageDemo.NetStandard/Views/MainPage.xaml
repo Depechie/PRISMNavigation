@@ -17,6 +17,7 @@
                 VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
 
             <Button Text="Open popup"
+                VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
                 Command="{Binding PopupCommand}" />
 
             <Button Text="Open master detail menu" Clicked="OnMenuClicked"
