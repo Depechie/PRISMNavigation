@@ -3,8 +3,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="BasePageDemo.NetStandard.Controls.Popup">
 	<ContentView.Content>
-        <Grid HeightRequest="300" WidthRequest="200" BackgroundColor="Gray">
-            <Button x:Name="OkButton" Text="Ok" Clicked="OnOkClicked" />
+        <Grid BackgroundColor="Gray">
+            <Button x:Name="OkButton" Text="Ok" Clicked="OnOkClicked" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
         </Grid>
 	</ContentView.Content>
 </ContentView>
