@@ -40,6 +40,7 @@
                     WidthRequest="50" HeightRequest="40"
                     VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
                     BackgroundColor="Transparent" BorderColor="Transparent"
+                    FontSize="20"
                     Grid.Column="0">
                     <Button.FontFamily>
                         <OnPlatform x:TypeArguments="x:String">
