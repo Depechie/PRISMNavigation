@@ -148,6 +148,10 @@
     <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
+    <AndroidResource Include="Resources\drawable\iconadd.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\iconadd.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\iconadd.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iconadd.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BasePageDemo.NetStandard\BasePageDemo.NetStandard.csproj">
