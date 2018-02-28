@@ -1,5 +1,6 @@
 ﻿using System;
 using Prism.Commands;
+using Prism.Events;
 using Prism.Navigation;
 
 namespace BasePageDemo.NetStandard.ViewModels
@@ -11,7 +12,7 @@ namespace BasePageDemo.NetStandard.ViewModels
         private DelegateCommand _navigateCommand;
         public DelegateCommand NavigateCommand => _navigateCommand ?? (_navigateCommand = new DelegateCommand(async () => await _navigationService.GoBackAsync()));
 
-        public SubViewModel(INavigationService navigationService) : base(navigationService)
+        public SubViewModel(INavigationService navigationService, IEventAggregator eventAggregator) : base(navigationService, eventAggregator)
         {
         }
     }

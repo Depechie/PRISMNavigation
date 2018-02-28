@@ -1,4 +1,7 @@
-﻿using Prism.Commands;
+﻿using BasePageDemo.NetStandard.Models;
+using BasePageDemo.NetStandard.PubSubEvents;
+using Prism.Commands;
+using Prism.Events;
 using Prism.Mvvm;
 using Prism.Navigation;
 using Xamarin.Forms;
@@ -7,7 +10,15 @@ namespace BasePageDemo.NetStandard.ViewModels
 {
     public class ViewModelBase : BindableBase, INavigationAware
     {
-        public INavigationService _navigationService;
+        protected INavigationService _navigationService;
+        protected IEventAggregator _eventAggregator;
+
+        private PageMode _pageMode;
+        public PageMode PageMode
+        {
+            get => _pageMode;
+            set => SetProperty(ref _pageMode, value);
+        }
 
         private bool _backButtonIsVisible;
         public bool BackButtonIsVisible
@@ -29,14 +40,21 @@ namespace BasePageDemo.NetStandard.ViewModels
             get => _navigateBackCommand ?? (_navigateBackCommand = new DelegateCommand(async () => await _navigationService.GoBackAsync()));
         }
 
+        private DelegateCommand _hamburgerCommand;
+        public DelegateCommand HamburgerCommand
+        {
+            get => _hamburgerCommand ?? (_hamburgerCommand = new DelegateCommand(() => _eventAggregator.GetEvent<HamburgerMenuEvent>().Publish()));
+        }
+
         public ViewModelBase()
         {
 
         }
 
-        public ViewModelBase(INavigationService navigationService)
+        public ViewModelBase(INavigationService navigationService, IEventAggregator eventAggregator)
         {
             _navigationService = navigationService;
+            _eventAggregator = eventAggregator;
         }
 
         public void OnNavigatedFrom(NavigationParameters parameters)
@@ -53,6 +71,11 @@ namespace BasePageDemo.NetStandard.ViewModels
 
         public void OnNavigatingTo(NavigationParameters parameters)
         {
+        }
+
+        protected virtual async void CloseAsync()
+        {
+            await _navigationService.GoBackAsync(useModalNavigation: PageMode == PageMode.Modal);
         }
     }
 }

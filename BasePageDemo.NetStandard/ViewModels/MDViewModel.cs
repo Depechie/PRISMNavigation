@@ -1,5 +1,6 @@
 ﻿using System;
 using Prism.Commands;
+using Prism.Events;
 using Prism.Navigation;
 using Xamarin.Forms;
 
@@ -13,7 +14,7 @@ namespace BasePageDemo.NetStandard.ViewModels
         private DelegateCommand _navigateVBCommand;
         public DelegateCommand NavigateVBCommand => _navigateVBCommand ?? (_navigateVBCommand = new DelegateCommand(async () => await _navigationService.NavigateAsync("NavigationPage/SecondPage")));
 
-        public MDViewModel(INavigationService navigationService) : base(navigationService)
+        public MDViewModel(INavigationService navigationService, IEventAggregator eventAggregator) : base(navigationService, eventAggregator)
         {
 
         }

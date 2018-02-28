@@ -33,6 +33,29 @@
                     VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
                     Grid.Column="0" Grid.ColumnSpan="3" />
 
+                <Button x:Name="PageHamburgerButton"
+                    Text="&#xF414;"
+                    TextColor="White"
+                    Command="{Binding HamburgerCommand}"
+                    WidthRequest="50" HeightRequest="40"
+                    VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                    BackgroundColor="Transparent" BorderColor="Transparent"
+                    Grid.Column="0">
+                    <Button.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Material Design Icons" />
+                            <On Platform="Android" Value="materialdesignicons-webfont.ttf#Material Design Icons" />
+                        </OnPlatform>
+                    </Button.FontFamily>
+                </Button>
+
+                <Button x:Name="PageCloseButton" Text="x"
+                    TextColor="White"
+                    WidthRequest="50" HeightRequest="40"
+                    Command="{Binding CloseCommand}"
+                    VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                    Grid.Column="0" />
+
                 <Button x:Name="PageBackButton" Text="&lt;"
                     TextColor="White"
                     WidthRequest="50" HeightRequest="40"
@@ -51,8 +74,7 @@
                 RowSpacing="0" ColumnSpacing="0"
                 BackgroundColor="White"
                 VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
-                Grid.Row="2"
-            />
+                Grid.Row="2" />
 
             <controls:FabButton x:Name="FabButton"
                 IsVisible="{Binding IsFabButtonVisible}"

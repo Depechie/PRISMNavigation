@@ -3,7 +3,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:views="clr-namespace:BasePageDemo.NetStandard.Views;assembly=BasePageDemo.NetStandard"
     x:Class="BasePageDemo.NetStandard.Views.MainPage"
-    BasePageTitle="{Binding Title}">
+    BasePageTitle="{Binding Title}"
+    PageMode="Menu">
 	<views:BasePage.BasePageContent>
         <StackLayout VerticalOptions="CenterAndExpand">
             <Label Text="Look ma view A" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />

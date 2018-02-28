@@ -1,6 +1,7 @@
 ﻿using System;
 using BasePageDemo.NetStandard.Services.Interfaces;
 using Prism.Commands;
+using Prism.Events;
 using Prism.Navigation;
 
 namespace BasePageDemo.NetStandard.ViewModels
@@ -26,8 +27,7 @@ namespace BasePageDemo.NetStandard.ViewModels
         private DelegateCommand _fabCommand;
         public DelegateCommand FabCommand => _fabCommand ?? (_fabCommand = new DelegateCommand(() => IsFabButtonVisible = !IsFabButtonVisible));
 
-        public MainViewModel(INavigationService navigationService, IPopupService popupService) : base(navigationService)
-        {
+        public MainViewModel(INavigationService navigationService, IPopupService popupService, IEventAggregator eventAggregator) : base(navigationService, eventAggregator)        {
             _popupService = popupService;
         }
     }
