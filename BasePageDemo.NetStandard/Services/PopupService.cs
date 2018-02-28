@@ -26,7 +26,18 @@ namespace BasePageDemo.NetStandard.Services
             _popup.Click += OnClicked;
 
             if(App.Current.MainPage is MasterDetailPage current)
-                ((BasePage)((NavigationPage)current.Detail).CurrentPage).BasePageContent.Add(_popup);
+            {
+                //Full screen popup
+                var cnt = ((ContentPage)((NavigationPage)current.Detail).CurrentPage).Content;
+                if (cnt is Grid grd)
+                {
+                    grd.Children.Add(_popup, 0, 0);
+                    Grid.SetRowSpan(_popup, 3);
+                }
+
+                //Full content popup
+                //((BasePage)((NavigationPage)current.Detail).CurrentPage).BasePageContent.Add(_popup);
+            }                
         }
 
         public bool Dismiss()
@@ -46,7 +57,13 @@ namespace BasePageDemo.NetStandard.Services
         {
             if (_popup != null && App.Current.MainPage is MasterDetailPage current)
             {
-                ((BasePage)((NavigationPage)current.Detail).CurrentPage).BasePageContent.Remove(_popup);
+                //Full page popup
+                var cnt = ((ContentPage)((NavigationPage)current.Detail).CurrentPage).Content;
+                if (cnt is Grid grd)
+                    grd.Children.Remove(_popup);
+
+                //Full content popup
+                //((BasePage)((NavigationPage)current.Detail).CurrentPage).BasePageContent.Remove(_popup);
 
                 _popup.Click -= OnClicked;
                 _popup = null;
