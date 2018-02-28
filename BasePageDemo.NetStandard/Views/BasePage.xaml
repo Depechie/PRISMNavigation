@@ -43,7 +43,7 @@
 
                 <Label x:Name="PageTitle"
                     TextColor="White"
-                    VerticalOptions="Center" HorizontalOptions="Center"
+                    VerticalOptions="FillAndExpand" HorizontalOptions="Center" VerticalTextAlignment="Center"
                     Grid.Column="1" />
             </Grid>
 
