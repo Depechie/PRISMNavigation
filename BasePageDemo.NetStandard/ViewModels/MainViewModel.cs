@@ -1,4 +1,5 @@
-﻿using BasePageDemo.NetStandard.Services.Interfaces;
+﻿using System;
+using BasePageDemo.NetStandard.Services.Interfaces;
 using Prism.Commands;
 using Prism.Navigation;
 
@@ -21,6 +22,9 @@ namespace BasePageDemo.NetStandard.ViewModels
         {
             var t = result;
         }))));
+
+        private DelegateCommand _fabCommand;
+        public DelegateCommand FabCommand => _fabCommand ?? (_fabCommand = new DelegateCommand(() => IsFabButtonVisible = !IsFabButtonVisible));
 
         public MainViewModel(INavigationService navigationService, IPopupService popupService) : base(navigationService)
         {

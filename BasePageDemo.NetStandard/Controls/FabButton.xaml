@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:BasePageDemo.NetStandard.Controls;assembly=BasePageDemo.NetStandard"
+    x:Class="BasePageDemo.NetStandard.Controls.FabButton">
+	<ContentView.Content>
+        <Grid RowSpacing="0" ColumnSpacing="0"
+            HeightRequest="50" WidthRequest="50"
+            VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+
+            <controls:ContentViewRoundedCorners CornerRadius="25" BackgroundColor="Olive" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+            <Image x:Name="FabIcon" HeightRequest="15" WidthRequest="15" VerticalOptions="Center" HorizontalOptions="Center" />
+            <Button BackgroundColor="Transparent" BorderColor="Transparent" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+        </Grid>
+	</ContentView.Content>
+</ContentView>

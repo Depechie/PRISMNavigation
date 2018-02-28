@@ -16,6 +16,13 @@ namespace BasePageDemo.NetStandard.ViewModels
             set => SetProperty(ref _backButtonIsVisible, value);
         }
 
+        private bool _isFabButtonVisible = false;
+        public bool IsFabButtonVisible
+        {
+            get => _isFabButtonVisible;
+            set => SetProperty(ref _isFabButtonVisible, value);
+        }
+
         private DelegateCommand _navigateBackCommand;
         public DelegateCommand NavigateBackCommand
         {

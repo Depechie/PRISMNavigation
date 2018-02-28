@@ -20,8 +20,12 @@
                 VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
                 Command="{Binding PopupCommand}" />
 
+            <Button Text="Show floating button"
+                VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
+                Command="{Binding FabCommand}" />
+
             <Button Text="Open master detail menu" Clicked="OnMenuClicked"
-                VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+                VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />                           
         </StackLayout>
 	</views:BasePage.BasePageContent>
 </views:BasePage>
