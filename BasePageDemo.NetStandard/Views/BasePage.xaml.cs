@@ -59,8 +59,7 @@ namespace BasePageDemo.NetStandard.Views
 
             PopupService = ((PrismApplication)App.Current).Container.GetContainer().Resolve<IPopupService>();
 
-            //TODO: Glenn - make the status row height depending from the platform ( Android or iOS ) and device ( iOS regular or iPhone X )
-            StatusRowDefinition.Height = Device.RuntimePlatform == Device.iOS ? 20 : 0;
+            StatusRowDefinition.Height = DependencyService.Get<IDeviceInfo>().StatusbarHeight;
 
             Container = ((PrismApplication)App.Current).Container.GetContainer();
             EventAggregator = Container.Resolve<IEventAggregator>();

@@ -23,5 +23,6 @@
     <Folder Include="Services\Interfaces\" />
     <Folder Include="Models\" />
     <Folder Include="PubSubEvents\" />
+    <Folder Include="Helpers\" />
   </ItemGroup>
 </Project>
