@@ -84,29 +84,32 @@ namespace BasePageDemo.NetStandard.Views
 
         private void SetPageMode(PageMode pageMode)
         {
-            ((ViewModelBase)BindingContext).PageMode = pageMode;
-            switch (pageMode)
+            if (BindingContext != null)
             {
-                case PageMode.Menu:
-                    PageHamburgerButton.IsVisible = true;
-                    PageCloseButton.IsVisible = false;
-                    PageBackButton.IsVisible = false;
-                    break;
-                case PageMode.Navigate:
-                    PageHamburgerButton.IsVisible = false;
-                    PageCloseButton.IsVisible = false;
-                    PageBackButton.IsVisible = true;
-                    break;
-                case PageMode.Modal:
-                    PageCloseButton.IsVisible = true;
-                    PageHamburgerButton.IsVisible = false;
-                    PageBackButton.IsVisible = false;
-                    break;
-                default:
-                    PageCloseButton.IsVisible = false;
-                    PageHamburgerButton.IsVisible = false;
-                    PageBackButton.IsVisible = false;
-                    break;
+                ((ViewModelBase)BindingContext).PageMode = pageMode;
+                switch (pageMode)
+                {
+                    case PageMode.Menu:
+                        PageHamburgerButton.IsVisible = true;
+                        PageCloseButton.IsVisible = false;
+                        PageBackButton.IsVisible = false;
+                        break;
+                    case PageMode.Navigate:
+                        PageHamburgerButton.IsVisible = false;
+                        PageCloseButton.IsVisible = false;
+                        PageBackButton.IsVisible = true;
+                        break;
+                    case PageMode.Modal:
+                        PageCloseButton.IsVisible = true;
+                        PageHamburgerButton.IsVisible = false;
+                        PageBackButton.IsVisible = false;
+                        break;
+                    default:
+                        PageCloseButton.IsVisible = false;
+                        PageHamburgerButton.IsVisible = false;
+                        PageBackButton.IsVisible = false;
+                        break;
+                }
             }
         }
     }
