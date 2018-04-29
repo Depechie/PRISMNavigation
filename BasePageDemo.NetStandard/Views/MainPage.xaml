@@ -10,6 +10,7 @@
             <Label Text="Look ma view A" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
             
             <Button Text="Navigate to a sub page"
+                    CornerRadius="10" BackgroundColor="Teal" TextColor="White" WidthRequest="200"
                 Command="{Binding NavigateCommand}"
                 VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
 
