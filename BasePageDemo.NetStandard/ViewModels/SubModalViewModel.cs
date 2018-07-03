@@ -15,6 +15,9 @@ namespace BasePageDemo.NetStandard.ViewModels
         private DelegateCommand _navigateSubCommand;
         public DelegateCommand NavigateSubCommand => _navigateSubCommand ?? (_navigateSubCommand = new DelegateCommand(async () => await _navigationService.NavigateAsync("SubPage")));
 
+        private DelegateCommand _navigateSecondModalCommand;
+        public DelegateCommand NavigateSecondModalCommand => _navigateSecondModalCommand ?? (_navigateSecondModalCommand = new DelegateCommand(async () => await _navigationService.NavigateAsync("SubPage", useModalNavigation: true)));
+
         public SubModalViewModel(INavigationService navigationService, IEventAggregator eventAggregator) : base(navigationService, eventAggregator)
         {
         }

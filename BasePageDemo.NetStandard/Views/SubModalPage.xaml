@@ -12,6 +12,10 @@
                 Command="{Binding NavigateSubCommand}"
                 VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
 
+            <Button Text="Navigate to second modal page within modal"
+                Command="{Binding NavigateSecondModalCommand}"
+                VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+
             <Button Text="Navigate back"
                 Command="{Binding NavigateCommand}"
                 VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
